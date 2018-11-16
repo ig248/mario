@@ -51,6 +51,7 @@ def make_transformer_class(func=identity):
 
     proto_dict = {
         '__init__': proto__init,
+        '__doc__': func.__doc__,
         'fit': proto_fit,
         'transform': proto_transform
     }
