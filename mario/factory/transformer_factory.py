@@ -64,7 +64,8 @@ def make_transformer_class(func=identity):
     return new_class
 
 
-def make_transformer(func=identity, **kwargs):
+def function_transformer(func=identity, **kwargs):
     """Make an improved FunctionTransformer from a function."""
     transformer_class = make_transformer_class(func=func)
-    return transformer_class(**kwargs)
+    transformer_instance = transformer_class(**kwargs)
+    return transformer_instance
